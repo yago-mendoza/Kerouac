@@ -38,7 +38,7 @@ BATCH = []
 NCOL = 3
 N_CHANGES_YET = 0
 DETAILS_FEATURE = True
-AUTOSAVE_FEATURE = False
+AUTOSAVE_FEATURE = True
 NEW_TARGET = False
 targets_history = []
 reqb = None
@@ -54,7 +54,7 @@ def header ():
     print('\\ Find your words, express your world.')
     print('Contact : yagomendoza.dev@gmail.com')
     print('Tip : write "help" to learn more about commands.')
-    print("<i> .autosave : 'False' by default")
+    print("<!> .autosave : 'True' by default")
     print()
     
 header()
@@ -637,10 +637,31 @@ while not FINISH :
                             EDITED = True
                             synonym,semantic,observation = None,None,None
                             if FIELD == "synonyms":
+                                if len(command)>50:
+                                    choice_obs = input("<i> Are you sure you are entering the attribute in the correct category?[Y/N]\n>> ")
+                                    if choice_obs in ['y','Y','yes','YES','Yes','si','SI','Si']:
+                                        print('Done.')
+                                    else:
+                                        print('Aborted.')
+                                        continue
                                 synonym = command
                             if FIELD == "semantics":
+                                if len(command)>50:
+                                    choice_obs = input("<i> Are you sure you are entering the attribute in the correct category?[Y/N]\n>> ")
+                                    if choice_obs in ['y','Y','yes','YES','Yes','si','SI','Si']:
+                                        print('Done.')
+                                    else:
+                                        print('Aborted.')
+                                        continue
                                 semantic = command
                             if FIELD == "observations":
+                                if len(command)<50:
+                                    choice_obs = input("<i> Are you sure you are entering the attribute in the correct category?[Y/N]\n>> ")
+                                    if choice_obs in ['y','Y','yes','YES','Yes','si','SI','Si']:
+                                        print('Done.')
+                                    else:
+                                        print('Aborted.')
+                                        continue
                                 observation = command
                             if Database.find(target) == None:
                                 Database.add_node(target)

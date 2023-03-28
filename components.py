@@ -70,15 +70,28 @@ class Database :
     
     @classmethod
     def find(cls, title):
-        for node in cls.nodes:
-            if node.title == title:
-                return node
-        return None
+
+        low = 0
+        high = len(cls.nodes) - 1
+
+        while low <= high:
+            mid = (low + high) // 2
+            mid_title = cls.nodes[mid].title
+ 
+            if mid_title == title:
+                return cls.nodes[mid]
+            elif mid_title < title:
+                low = mid + 1
+            else:
+                high = mid - 1
+
+        return None  # No se encontró el nodo con el título buscado.
     
     @classmethod
     def add_node(cls, title):
         if not cls.find(title): # If it does not yet exist
             cls.nodes.append(Node._empty(title)) # It does now
+        cls.nodes.sort(key=lambda node:node.title)
 
     @classmethod
     def delete_node(cls, title):
@@ -88,9 +101,11 @@ class Database :
             for semantic in cls.find(title).semantics:
                 cls.find(semantic).delete(semantic=title) # Deletes the other end connexion for each semantical attribute
             cls.nodes.remove(cls.find(title)) # Finally, the node is deleted.
+        cls.nodes.sort(key=lambda node:node.title)
     
     @classmethod
     def save(cls):
+        cls.nodes.sort(key=lambda node:node.title)
         lines = ['|||'.join([node.title,
                              '0' if not node.pinned else '1',
                              '/'.join([_ for _ in list(set(node.synonyms)) if _]),

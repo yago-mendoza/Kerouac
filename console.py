@@ -283,6 +283,7 @@ while not FINISH :
                 node = Database.find(target)
                 if node.pinned == False:
                     node.pin()
+                    print("<i> Pinned.")
                 else:
                     print("<i> Node was already pinned.")
             else:
@@ -294,6 +295,7 @@ while not FINISH :
                 node = Database.find(target)
                 if node.pinned == True:
                     node.unpin()
+                    print("<i> Unpinned.")
                 else:
                     print("<i> Node was already unpinned.")
             else:
@@ -625,6 +627,7 @@ while not FINISH :
             continue
 
         else:
+            #Introducir palabras
             if FIELD == None:
                 print('<!> Error 200 : field to be set ("y"/"e"/"o").')
                 continue
@@ -664,7 +667,7 @@ while not FINISH :
                                         continue
                                 observation = command
                             if Database.find(target) == None:
-                                Database.add_node(target)
+                                Database.add_node(target[0].upper() + target[1:])
                             Database.find(target).add(synonym,semantic,observation)
                             N_CHANGES_YET += 1
                         else:
@@ -755,7 +758,7 @@ while not FINISH :
                 elif FIELD == "observations":
                     observation = attribute
                 if Database.find(target) == None:
-                    Database.add_node(target)
+                    Database.add_node(target[0].upper() + target[1:])
                 Database.find(target).add(synonym,semantic,observation)
                 N_CHANGES_YET += 1
             attribute = Suggester.suggest()

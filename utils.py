@@ -5,7 +5,7 @@ if hasattr(sys, '_MEIPASS'):
 else:
     kerouac_database = "Kerouac.txt"
 
-def save_data_to_txt (rows_to_save,file=kerouac_database,mode='a',sort=True):
+def save_data_to_txt (rows_to_save,file=kerouac_database,mode='a',sort=False):
     if sort:
         rows_to_save = sorted(rows_to_save)
     with open (file,mode,encoding="utf-8") as file :

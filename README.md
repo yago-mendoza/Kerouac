@@ -78,7 +78,7 @@ The following is a list of basic commands that can be used to navigate the datab
 * `[custom text]` : associates custom text to the working "attribute field" for the "current node".
 * `= <i> <i> ...` : updates the attributes for the current "attribute field" with those of the specified attribute.
 * `<i> <i> ... =` : transfers the "attribute field" attributes of the "current node" to those at specified positions.
-* `ls / +` : displays the set "attribute field" for the current node.
+* `ls / + (sort)` : displays the set "attribute field" for the current node.
 
 #### Batch Commands
 The batch is a space for storing nodes for performing searches. The following is a list of batch commands:

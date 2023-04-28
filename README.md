@@ -1,5 +1,7 @@
 # Kerouac
- 
+
+A prototype proof-of-concept of a primary database API that provides a robust set of functionalities for taxonomic querying of vocabulary, including syntagmas, idioms, common expressions, quotes, adverbs, phrases, adjectives, and more.
+
 ## Table of contents
 
 * [General Information](#general-information)

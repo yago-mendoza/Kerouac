@@ -1,7 +1,5 @@
 # Kerouac
 
-A prototype proof-of-concept of a primary database API that provides a robust set of functionalities for taxonomic querying of vocabulary, including syntagmas, idioms, common expressions, quotes, adverbs, phrases, adjectives, and more.
-
 ## Table of contents
 
 * [General Information](#general-information)
@@ -11,19 +9,19 @@ A prototype proof-of-concept of a primary database API that provides a robust se
 
 ## General Information
 
-This software application is a console-based, sophisticated database management tool that enables professionals to effectively manage language-related tasks. The application allows users to effortlessly create, edit, and traverse a graph structure of interconnected nodes, with each node representing a specific particle of the language[^1], such as nouns, adjectives, adverbs, and more, varying in complexity and length. In addition to particles of language, the database also includes replicas that can be used for scripting purposes.
+This software application is a console-based database management tool, allowing users to effortlessly develop and traverse a graph structure of interconnected nodes, each node representing a specific syntagma.
 
-The program's ability to seamlessly explore and modify the connections between nodes within the graph can assist writers in improving the coherence and consistency of their written content, making it more effective and impactful for their intended audience. Furthermore, the application can aid in the development of a writer's language proficiency, allowing them to refine their mastery of the language through practical experimentation with various linguistic elements.
+The program's ability to seamlessly explore and modify the connections between nodes within the graph can assist in improving the coherence and consistency of written content, making it more effective and impactful for their intended purpose. Furthermore, the use of an application can facilitate the development of language[^1] proficiency by providing a platform for practical experimentation with diverse linguistic elements. Through such experimentation, users can engage in active learning, acquiring and refining language skills in context.
 
 [^1]: It should be noted that the current database used by the program is written in Spanish, but the tool itself can be applied to any language or any other ontological relational system.
 
 ### Node interconnexions
 
-Node interconnections play a crucial role in comprehending the relationships between different particles of language. The database is designed to distinguish between synonymical connections, which represent similarities in meaning, and semantical connections, which capture direct relationships based on various factors such as usage, context, or classification. This distinction provides users with a comprehensive understanding of language relationships and a customizable environment for language-related tasks.
+Node interconnections play a crucial role in comprehending the relationships between different particles. The database is designed to distinguish between synonymical connections, which represent similarities in meaning, and semantical connections, which capture direct relationships based on various factors such as usage, context, or classification.
 
 ### Context
 
-This project is a simplified version of Ebadgi, an more complex ongoing project encompassing Süskind, McKee and Kelsey databases. This console-based application provides access to the most fundamental functionalities while the original project continues to be developed. The repository includes the database file, which is the foundation of management and will not undergo any changes.
+This project is a simplified version of Ebadgi, which is designed to provide temporary access to the Süskind, McKee, and Kelsey databases, included in the project as a foundational component. Although the development of an specific API for these databases has been halted, the database development itself is still ongoing. This prototype provides access to the most fundamental functionalities, temporarely.
 
 ## Time-Saving Features
 
@@ -51,9 +49,8 @@ py console.py
 
 This script contains the code for the program, which allows you to interact with a database using a command-line interface, displaying the following program header.
 
-```bash
+```
 ~ KEROUAC ~
-\ Find your words, express your world.
 Contact : yagomendoza.dev@gmail.com
 Tip : write "help" to learn more about commands.
 <i> .autosave : 'False' by default
